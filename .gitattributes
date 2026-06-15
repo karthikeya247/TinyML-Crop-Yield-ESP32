@@ -1,0 +1,8 @@
+* text=auto
+*.ipynb text eol=lf
+*.h text eol=lf
+*.py text eol=lf
+*.h5 binary
+*.tflite binary
+*.xlsx binary
+*.save binary
