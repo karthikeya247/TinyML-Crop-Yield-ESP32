@@ -122,12 +122,43 @@ const char* password = "YOUR_WIFI_PASSWORD";
 4. Upload to ESP32
 
 ### 3. Web Application Setup
+
+#### Step 1 — Configure API Keys
+Open `WEB APPLICATION/src/services/api.ts` and replace the placeholders with your actual keys:
+
+```javascript
+// ThingSpeak Configuration
+const THINGSPEAK_CHANNEL_ID = 'YOUR_THINGSPEAK_CHANNEL_ID';
+const THINGSPEAK_READ_API_KEY = 'YOUR_THINGSPEAK_READ_API_KEY';
+
+// OpenWeather Configuration
+const OPENWEATHER_API_KEY = 'YOUR_OPENWEATHER_API_KEY';
+```
+
+**How to get API Keys:**
+
+| API | Steps |
+|---|---|
+| **ThingSpeak Channel ID** | Login to [thingspeak.com](https://thingspeak.com) → My Channels → Your Channel → Channel ID |
+| **ThingSpeak Read API Key** | Your Channel → API Keys tab → Read API Key |
+| **OpenWeather API Key** | Register at [openweathermap.org](https://openweathermap.org/api) → API Keys → Copy key |
+
+#### Step 2 — Update your location (OpenWeather)
+In `api.ts`, update your latitude and longitude:
+```javascript
+const OPENWEATHER_LAT = 16.815;  // Your latitude
+const OPENWEATHER_LON = 81.526;  // Your longitude
+```
+
+#### Step 3 — Install and Run
 ```bash
 cd "WEB APPLICATION"
 npm install
 npm run dev
 ```
 Open `http://localhost:5173` in your browser.
+
+> ⚠️ **Note:** Never share your actual API keys publicly. Keep them only in your local `api.ts` file and do not push them to GitHub.
 
 ---
 
